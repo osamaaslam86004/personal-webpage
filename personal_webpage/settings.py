@@ -32,7 +32,7 @@ DEBUG = False
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["personalwebpage.pythonanywhere.com"]
 
 
 # Application definition
