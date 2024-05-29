@@ -23,6 +23,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("resume/", include("Resume.urls")),
-]
-# path("resume/", include("Cover_Letter.urls")),
-# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("cover-letter/", include("Cover_Letter.urls")),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
