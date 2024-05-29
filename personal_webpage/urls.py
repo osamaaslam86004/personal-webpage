@@ -26,5 +26,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("resume/", include("Resume.urls")),
     path("cover-letter/", include("Cover_Letter.urls")),
-    path("", RedirectView.as_view(pattern_name="render-resume", permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
