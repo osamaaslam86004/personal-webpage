@@ -11,7 +11,7 @@ urlpatterns = [
     path(
         "",
         RedirectView.as_view(
-            pattern_name="For-Entry-level-Django-Web-Developer", permanent=True
+            pattern_name="Entry-level-Django-Web-Developer", permanent=True
         ),
     ),
 ]
