@@ -90,20 +90,12 @@ DATABASES = {
 }
 
 
-# for DEBUG = True:
-# # 1. add the below settings:
-# # STATIC_URL = "/static/"
-# # STATIC_ROOT = os.path.join(BASE_DIR, "static")
-# # 2. create a static directory inside each app
+if DEBUG == True:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+else:
+    STATIC_ROOT = "home/personalwebpage/personal-webpage/static/"
 
-
-# for DEBUG = False:
-# # 1. add the below settings:
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-# # 2. Run python manage.py collectstatic  --> now you can remove the static folder from each app
-# 3. Lastly, add this path to urlpattren in urls.py file of settings.py
-# urlpattren []+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
