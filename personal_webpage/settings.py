@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
@@ -90,11 +90,8 @@ DATABASES = {
 }
 
 
-if DEBUG == True:
-    STATIC_URL = "/static/"
-else:
-    STATIC_URL = "/static/"
-    STATIC_ROOT = "home/personalwebpage/personal-webpage/static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = "static"
 
 
 # Password validation
