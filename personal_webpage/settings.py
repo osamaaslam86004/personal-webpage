@@ -63,7 +63,7 @@ ROOT_URLCONF = "personal_webpage.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -91,11 +91,11 @@ DATABASES = {
 
 
 if DEBUG == True:
-
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
-else:
-    STATIC_ROOT = "home/personalwebpage/personal-webpage/static/"
     STATIC_URL = "/static/"
+else:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = "home/personalwebpage/personal-webpage/static/"
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
