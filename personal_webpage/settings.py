@@ -17,6 +17,7 @@ from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(f"--------------{BASE_DIR}")
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
@@ -91,7 +92,10 @@ DATABASES = {
 
 
 STATIC_URL = "/static/"
-STATIC_ROOT = "static"
+if DEBUG:
+    STATICFILES_DIRS = [BASE_DIR / "static"]
+else:
+    STATIC_ROOT = BASE_DIR / "STATICFILES"
 
 
 # Password validation
