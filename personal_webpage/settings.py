@@ -28,7 +28,7 @@ print(f"--------------{BASE_DIR}")
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
