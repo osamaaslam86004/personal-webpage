@@ -1,57 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow"> <!-- Disallow search engines to index and follow links -->
     <title>Osama Aslam - Cover Letter</title>
-    <style>
-        body {
-            font-family: 'Calibri';
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-size: larger;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header,
-        .footer {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .content {
-            margin-bottom: 20px;
-            text-indent: 10px;
-            text-align: justify;
-            text-justify: inter-word;
-            -webkit-user-select: none;
-            /* Safari */
-            -ms-user-select: none;
-            /* IE 10 and IE 11 */
-            user-select: none;
-            /* Standard syntax */
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-            text-indent: 10px;
-            text-align: justify;
-            text-justify: inter-word;
-        }
-
-        .contact-info p {
-            margin: 5px 0;
-        }
-    </style>
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'Cover_Letter/css/cover_letter.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -63,8 +20,12 @@
             <p><strong>Osama Aslam</strong></p>
             <p>Email: osama.aslam.86004@gmail.com</p>
             <p>Phone: (+92) 3074649892</p>
-            <p>GitHub: <a href="https://github.com/osamaaslam86004">osamaaslam86004</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/osama-aslam-86004">osama-aslam-86004</a></p>
+            <p>GitHub: <a href="https://github.com/osamaaslam86004" target="_blank" rel="noopener noreferrer external"
+                    referrerpolicy="strict-origin-when-cross-origin" aria-label="Osama Aslam GitHub Profile"
+                    hreflang="en">osamaaslam86004</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/osama-aslam-86004" rel="noopener noreferrer"
+                    title="Visit Osama Aslam's LinkedIn profile"
+                    aria-label="Osama Aslam LinkedIn Profile">osama-aslam-86004</a></p>
         </div>
         <div class="content">
             <p>[Today’s Date]</p>
@@ -96,14 +57,25 @@
                 applications. Notably, I developed an e-commerce platform with features such as social account
                 authentication, email and OTP verification, user permissions management, and Stripe payment integration.
                 The project also included tracking user behavior through Django cookie sessions. You can explore this
-                project <a href="https://osama11111.pythonanywhere.com">here</a> and review the source code on <a
-                    href="https://github.com/osamaaslam86004/E-Commrace-5-24-2024.git">GitHub</a>.</p>
+                project <a href="https://osama11111.pythonanywhere.com" target="_blank"
+                    rel="noopener noreferrer nofollow" referrerpolicy="strict-origin-when-cross-origin"
+                    aria-label="Visit Resume API Backend hosted on PythonAnywhere">here</a> and
+                review the source code on <a href=" https://github.com/osamaaslam86004/E-Commrace-5-24-2024.git"
+                    target="_blank" rel="noopener noreferrer external" referrerpolicy="strict-origin-when-cross-origin"
+                    aria-label="View the E-Commrace web app source code on GitHub">>GitHub</a>.</p>
 
             <p>Additionally, I created an API for resume creation, which was integrated with an e-commerce website. This
                 project involved implementing token-based authentication using django-rest-framework-simplejwt to ensure
-                secure access to API endpoints. The deployed project can be viewed <a
-                    href="https://osamaaslam.pythonanywhere.com/">here</a>, and the code is available on <a
-                    href="https://github.com/osamaaslam86004/reumse_api-5-24-2024.git">GitHub</a>.</p>
+                secure access to API endpoints. The deployed project can be viewed
+                <a href="https://osamaaslam.pythonanywhere.com/" target="_blank" rel="noopener noreferrer nofollow"
+                    aria-label="Visit E-Commerce website hosted on PythonAnywhere"
+                    referrerpolicy="strict-origin-when-cross-origin">here</a>, and the code
+                is available
+                on <a href="https://github.com/osamaaslam86004/reumse_api-5-24-2024.git" target="_blank"
+                    rel="noopener noreferrer external" referrerpolicy="strict-origin-when-cross-origin"
+                    aria-label="View the Resume API source code on GitHub">
+                    hreflang="en">GitHub</a>.
+            </p>
 
 
             <p>Thank you for considering my application. Please feel free to contact me at osama.aslam.86004@gmail.com

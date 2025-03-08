@@ -15,15 +15,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import RedirectView
+from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.urls import include, path
 
+from personal_webpage.csp_violation_report import csp_violation_report
+from personal_webpage.portfolio_site_map import sitemaps
+from personal_webpage.views import robots_txt
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("Resume.urls")),
     path("cover-letter/", include("Cover_Letter.urls")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    # Content-Security-Policy Violation Reporting
+    path("csp-violation-report/", csp_violation_report, name="csp_violation_report"),
+    # Robots.txt
+    path("robots.txt", robots_txt, name="robots-txt"),
+    # SiteMap
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
+]
+
+if settings.DEBUG:
+    urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

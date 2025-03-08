@@ -10,14 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
 import os
-from decouple import config
+from pathlib import Path
 
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(f"--------------{BASE_DIR}")
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +27,7 @@ print(f"--------------{BASE_DIR}")
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
@@ -45,11 +44,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "Resume",
     "Cover_Letter",
+    "csp",
 ]
 
 MIDDLEWARE = [
+    "csp.middleware.CSPMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -92,10 +94,7 @@ DATABASES = {
 
 
 STATIC_URL = "/static/"
-if DEBUG:
-    STATICFILES_DIRS = [BASE_DIR / "static"]
-else:
-    STATIC_ROOT = BASE_DIR / "STATICFILES"
+STATIC_ROOT = BASE_DIR / "STATICFILES"
 
 
 # Password validation
@@ -137,3 +136,54 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ------------------- django Content security protection------------------------
+CSP_IMG_SRC = (
+    "'self'",
+    "https://res.cloudinary.com",
+)
+
+CSP_STYLE_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net",
+    "https://fonts.googleapis.com",
+)
+
+
+CSP_FONT_SRC = (
+    "'self'",
+    "https://fonts.googleapis.com",
+    "https://fonts.gstatic.com",
+)
+
+
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "https://cdn.jsdelivr.net",
+)
+# Enable CSP violation reporting
+CSP_REPORT_URI = ""  # Django endpoint to handle reports
+# Modern reporting API (optional, but useful for analytics)
+CSP_REPORT_TO = "csp-report-group"
+# Report-Only mode for debugging (disable after testing)
+CSP_REPORT_ONLY = False  # Set to False when ready for production
+
+# CSP Violation Report File logger
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "WARNING",
+            "class": "logging.FileHandler",
+            "filename": "csp_violations.log",
+        },
+    },
+    "loggers": {
+        "csp": {
+            "handlers": ["file"],
+            "level": "WARNING",
+            "propagate": True,
+        },
+    },
+}

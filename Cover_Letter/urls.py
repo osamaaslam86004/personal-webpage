@@ -1,19 +1,20 @@
 from django.urls import path
-from Cover_Letter.views import RenderCoverLetter
 from django.views.generic import RedirectView
 
+from Cover_Letter.views import RenderCoverLetter
 
 app_name = "Cover_Letter"
 urlpatterns = [
     path(
-        "For-Entry-level-Django-Web-Developer/",
+        "cover-letter-for-python-django-web-developer/",
         RenderCoverLetter.as_view(),
-        name="Entry-level-Django-Web-Developer",
+        name="python-django-web-developer-cover-letter",
     ),
     path(
         "",
         RedirectView.as_view(
-            pattern_name="Entry-level-Django-Web-Developer", permanent=True
+            pattern_name="Cover_Letter:python-django-web-developer-cover-letter",
+            permanent=True,
         ),
     ),
 ]
