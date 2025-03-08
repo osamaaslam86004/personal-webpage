@@ -141,6 +141,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CSP_IMG_SRC = (
     "'self'",
     "https://res.cloudinary.com",
+    "data:",  # Allow inline SVG images
 )
 
 CSP_STYLE_SRC = (
@@ -162,11 +163,11 @@ CSP_SCRIPT_SRC = (
     "https://cdn.jsdelivr.net",
 )
 # Enable CSP violation reporting
-CSP_REPORT_URI = ""  # Django endpoint to handle reports
+CSP_REPORT_URI = "/csp-violation-report/"  # Django endpoint to handle reports
 # Modern reporting API (optional, but useful for analytics)
 CSP_REPORT_TO = "csp-report-group"
 # Report-Only mode for debugging (disable after testing)
-CSP_REPORT_ONLY = False  # Set to False when ready for production
+CSP_REPORT_ONLY = True  # Set to False when ready for production
 
 # CSP Violation Report File logger
 LOGGING = {

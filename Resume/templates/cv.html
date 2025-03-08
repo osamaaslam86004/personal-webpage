@@ -52,8 +52,7 @@
 <link href="{% static 'Resume/css/cv.css' %}" rel="stylesheet" type="text/css">
 
 <!-- JavaScript with Security & Performance -->
-<script src="{% static 'Resume/js/cv.js' %}" defer integrity="sha384-your-integrity-hash"
-    referrerpolicy="strict-origin-when-cross-origin"></script>
+<script src="{% static 'Resume/js/cv.js' %}" defer referrerpolicy="strict-origin-when-cross-origin"></script>
 
 <title>Osama Aslam - Python Web Developer</title>
 {% endblock %}
@@ -91,42 +90,106 @@
         <section id="skills" class="skills">
             <h2>Skills</h2>
 
-            <div class="flex-the-skill-section">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <ul>
-                        <li>Python - Intermediate</li>
-                        <li>HTML - Intermediate</li>
-                        <li>CSS - Beginner</li>
-                        <li>Javascript - Intermediate <span class="badge bg-info">New</span></li>
-                    </ul>
+            <div class="accordion accordion-flush according-container-size" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <h4>Programming Languages</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Python - Intermediate</li>
+                                <li>HTML - Intermediate</li>
+                                <li>CSS - Beginner</li>
+                                <li>Javascript - Intermediate <span class="badge bg-info">New</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h4>Web Development Frameworks</h4>
-                    <ul>
-                        <li>Django - Intermediate</li>
-                        <li>Django REST Framework - Intermediate</li>
-                        <li>Pytest - Beginner</li>
-                    </ul>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <h4>Web Development Frameworks</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Django - Intermediate</li>
+                                <li>Django REST Framework - Intermediate</li>
+                                <li>Pytest - Beginner</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h4>Other</h4>
-                    <ul>
-                        <li>GitHub - Beginner</li>
-                        <li>Bootstrap - Beginner</li>
-                    </ul>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            <h4>Cloud Platforms</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>AWS (EC2, RDS, S3) - Beginner</li>
+                                <li>Digital Ocean Droplets - Beginner</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
+                            <h4>Other</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>GitHub - Beginner</li>
+                                <li>Docker - Beginner</li>
+                                <li>Bootstrap - Beginner</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false"
+                            aria-controls="flush-collapseFive">
+                            <h4>Familiarity with Django Libraries</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Familiarity with Django Libraries:</strong>
+                                    Twilio, SendGrid, Axes, Phonenumber Field, Cloudinary Storage, Stripe API,
+                                    Django JSON Schema, drf-spectacular, Django-silk, Django-countries,
+                                    Django-crispy-forms,
+                                    django-bootstrap5, djangorestframework-simplejwt, django-formtools, pytest-django,
+                                    Faker
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="skill-category">
-                <h4>Familiarity with Django Libraries</h4>
-                <ul>
-                    <li><strong>Familiarity with Django Libraries:</strong>
-                        Twilio, SendGrid, Axes, Phonenumber Field, Cloudinary Storage, Stripe API,
-                        Django JSON Schema, drf-spectacular, Django-silk, Django-countries, Django-crispy-forms,
-                        django-bootstrap5, djangorestframework-simplejwt, django-formtools, pytest-django, Faker
-                    </li>
-                </ul>
-            </div>
+
         </section>
         <section id="projects" class="projects">
             <h2>Projects</h2>
