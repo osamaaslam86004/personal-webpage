@@ -41,6 +41,23 @@ A personal portfolio website built with **Django** and **HTML/CSS**, implementin
 
 ---
 
+## 📌 JSON-LD for SEO Optimization  
+
+To enhance **Google Search visibility** and enable **rich results**, I implemented **JSON-LD structured data** in my portfolio.  
+
+### 🔹 Features of JSON-LD Integration  
+- 📌 **Personal Profile Schema (`@type: Person`)** → Helps Google recognize me as a **Python Django Developer**.  
+- 🔗 **Social & Professional Links (`sameAs`)** → Added **LinkedIn, GitHub, and Twitter** for credibility.  
+- 🎓 **Certifications & Education (`alumniOf`)** → Listed multiple **online courses & certifications** from Coursera, Google Cloud, etc.  
+- 📩 **Contact Information (`email`)** → Helps with professional outreach.  
+
+### 🛠️ **Implementation Details**  
+- The **JSON-LD script** is placed inside the `<head>` section of `base.html`.  
+- Verified with **Google Rich Results Test** and submitted via **Google Search Console**.  
+
+🔍 **[Test JSON-LD Structured Data](https://search.google.com/test/rich-results)**  
+
+
 ## 🌍 Live Demo
 - **Portfolio Website:** [personalwebpage.pythonanywhere.com](https://personalwebpage.pythonanywhere.com/)  
 - **GitHub Repo:** [Portfolio Repository](https://github.com/osamaaslam86004/personal-webpage.git)  

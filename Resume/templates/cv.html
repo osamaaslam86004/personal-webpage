@@ -1,9 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+{% block head_content %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -59,9 +57,9 @@
         referrerpolicy="strict-origin-when-cross-origin"></script>
 
     <title>Osama Aslam - Python Web Developer</title>
-</head>
+{% endblock %}
 
-<body>
+{% block content %}
     <header>
         <div class="container">
             <div id="branding">
@@ -481,6 +479,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-</body>
+{% endblock %}
 
 </html>

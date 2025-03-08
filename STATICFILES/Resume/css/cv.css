@@ -89,6 +89,8 @@ header a:hover {
 
 p {
     font-size: 1em;
+    /* text-align: justify; */
+    margin-right: 30px;
 }
 
 
@@ -130,6 +132,7 @@ p {
     margin-bottom: 20px;
 }
 
+
 /* Set a different font-style for <li> inside <p> */
 .resume-api-backend-li .ul-features li {
     font-family: "Oswald", sans-serif;
@@ -138,6 +141,7 @@ p {
 }
 
 
+.e-commrace .tech-stack .resume-api-backend-link,
 .resume-builder-li .tech-stack .resume-api-backend-link {
     text-decoration: none;
     /* Removes underline */
@@ -146,8 +150,11 @@ p {
     cursor: pointer;
 }
 
+.e-commrace .tech-stack .resume-api-backend-link:hover,
 .resume-builder-li .tech-stack .resume-api-backend-link:hover,
+.e-commrace .tech-stack .resume-api-backend-link:focus,
 .resume-builder-li .tech-stack .resume-api-backend-link:focus,
+.e-commrace .tech-stack .resume-api-backend-link:active,
 .resume-builder-li .tech-stack .resume-api-backend-link:active {
     text-decoration: none;
     color: inherit;
