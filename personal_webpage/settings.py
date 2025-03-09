@@ -172,7 +172,7 @@ CSP_REPORT_TO = "csp-report-group"
 CSP_REPORT_ONLY = True  # Set to False when ready for production
 
 
-# django_compressor: Minify CSS and Js file
+# # django_compressor: Minify CSS and Js file
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
