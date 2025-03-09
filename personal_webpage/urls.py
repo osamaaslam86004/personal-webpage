@@ -35,7 +35,7 @@ urlpatterns = [
     path("robots.txt", robots_txt, name="robots-txt"),
     # SiteMap
     path(
-        "sitemap.xml",
+        "python-django-web-developer/sitemap.xml",
         sitemap,
         {"sitemaps": sitemaps},
         name="django.contrib.sitemaps.views.sitemap",
