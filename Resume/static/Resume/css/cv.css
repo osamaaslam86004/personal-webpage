@@ -1,3 +1,8 @@
+:root {
+    --p_fluid: clamp(0.625rem, 0.4793rem + 0.7175vw, 1.125rem);
+    --accordion-list: clamp(0.625rem, 0.5157rem + 0.5381vw, 1rem);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -7,9 +12,9 @@ body {
 }
 
 .container {
-    width: 80%;
     margin: auto;
     overflow: hidden;
+    border: 1px solid red;
 }
 
 header {
@@ -79,85 +84,61 @@ header a:hover {
     font-size: 20px;
 }
 
-.content {
-    padding: 20px;
-}
 
 .content h2 {
     text-align: center;
 }
 
 p {
-    font-size: 1em;
-    /* text-align: justify; */
+    font-size: var(--p_fluid);
     margin-right: 30px;
 }
 
+@media (min-width: 992px) {
+    .content {
+        padding: 20px;
+    }
+}
+
+.content .bio,
+.content .skills,
+.content .projects,
+.content .contact,
+.content .summary {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+}
 
 
-.tech-stack {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.skills .wrapper_according-container {
+    width: 100%;
     display: flex;
-    gap: 8px;
-    /* Space between badges */
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Set a different font-style for <ul> inside <p> */
-.e-commrace .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+.skills .wrapper_according-container .according_container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Set a different font-style for <li> inside <p> */
-.e-commrace .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
+.skills .wrapper_according-container .according_container .accordion-item .accordion-body li {
+    font-size: var(--accordion-list);
 }
 
-
-/* Set a different font-style for <ul> inside <p> */
-.resume-api-backend-li .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+.skills ul {
+    list-style-type: square;
+    margin: 0;
+    padding: 0 20px;
 }
 
-
-/* Set a different font-style for <li> inside <p> */
-.resume-api-backend-li .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
+.projects li {
+    margin-left: 30px;
 }
-
-
-/* Set a different font-style for <ul> inside <p> */
-.portfolio-li .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Set a different font-style for <li> inside <p> */
-.portfolio-li .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
-}
-
 
 .e-commrace .tech-stack .resume-api-backend-link,
 .resume-builder-li .tech-stack .resume-api-backend-link {
@@ -180,82 +161,15 @@ p {
 
 
 /* Set a different font-style for <ul> inside <p> */
-.image-slider-photoSwipe .image-slider-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Set a different font-style for <li> inside <p> */
-.image-slider-photoSwipe .image-slider-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
-}
-
-
-/* Set a different font-style for <ul> inside <p> */
-.table-hover-transition .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Set a different font-style for <li> inside <p> */
-.table-hover-transition .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
-}
-
-
-/* Set a different font-style for <ul> inside <p> */
-.fluid-typography-vs-breakpoints .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Set a different font-style for <li> inside <p> */
-.fluid-typography-vs-breakpoints .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
-}
-
-
-
-/* Set a different font-style for <ul> inside <p> */
-.typing-animations .ul-features {
-    font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Set a different font-style for <li> inside <p> */
-.typing-animations .ul-features li {
-    font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
-    font-size: 1rem;
-}
-
-
-/* Set a different font-style for <ul> inside <p> */
+.e-commrace .ul-features,
+.portfolio-li .ul-features,
+.resume-api-backend-li .ul-features,
+.image-slider-photoSwipe .image-slider-features,
+.table-hover-transition .ul-features,
+.fluid-typography-vs-breakpoints .ul-features,
+.typing-animations .ul-features,
 .parallax-animations .ul-features {
     font-family: "Playfair Display", serif;
-    /* Example: Stylish and elegant */
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
@@ -263,41 +177,32 @@ p {
 }
 
 /* Set a different font-style for <li> inside <p> */
+.e-commrace .ul-features li,
+.portfolio-li .ul-features li,
+.resume-api-backend-li .ul-features li,
+.image-slider-photoSwipe .image-slider-features li,
+.table-hover-transition .ul-features li,
+.fluid-typography-vs-breakpoints .ul-features li,
+.typing-animations .ul-features li,
 .parallax-animations .ul-features li {
     font-family: "Oswald", sans-serif;
-    /* Example: Bold and modern */
     font-size: 1rem;
 }
 
-
-.content .bio,
-.content .skills,
-.content .projects,
-.content .contact,
-.content .summary {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+.projects .tech-stack {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border: 1px solid red;
 }
 
-.skills .according-container-size {
-    width: 50%;
+.projects.tech-stack span {
+    font-size: clamp(0.625rem, 0.4793rem + 0.7175vw, 1.125rem);
 }
 
-.skills .flex-the-skill-section .skill-category h3 {
-    margin-bottom: 10px;
-}
 
-.skills ul {
-    list-style-type: square;
-    margin: 0;
-    padding: 0 20px;
-}
-
-.projects li {
-    margin-left: 30px;
-}
 
 .custom-divider {
     margin: 30px 0 30px 100px;
