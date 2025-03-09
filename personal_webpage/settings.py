@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "Resume",
     "Cover_Letter",
     "csp",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -169,6 +170,34 @@ CSP_REPORT_URI = "/csp-violation-report/"  # Django endpoint to handle reports
 CSP_REPORT_TO = "csp-report-group"
 # Report-Only mode for debugging (disable after testing)
 CSP_REPORT_ONLY = True  # Set to False when ready for production
+
+
+# django_compressor: Minify CSS and Js file
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    # other finders..
+    "compressor.finders.CompressorFinder",
+)
+COMPRESS_ENABLED = True  # compress in Debug=True + Debug =Flase
+
+# Default to False in development unless DEBUG=False
+COMPRESS_OFFLINE = True  # Pre-compress files during `collectstatic`
+COMPRESS_DEBUG_TOGGLE = "compress"  # Allows debug mode toggle
+# Specify the backend to handle compression
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_URL = STATIC_URL
+
+# Compress CSS and JS files
+COMPRESS_CSS_FILTERS = [
+    "compressor.filters.css_default.CssAbsoluteFilter",  # Handle relative paths
+    "compressor.filters.cssmin.CSSMinFilter",  # Minify CSS
+]
+
+COMPRESS_JS_FILTERS = [
+    "compressor.filters.jsmin.JSMinFilter",  # Minify JS
+]
+
 
 # CSP Violation Report File logger
 LOGGING = {
