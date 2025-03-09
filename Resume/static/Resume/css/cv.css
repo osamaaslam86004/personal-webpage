@@ -1,6 +1,8 @@
 :root {
-    --p_fluid: clamp(0.625rem, 0.4793rem + 0.7175vw, 1.125rem);
-    --accordion-list: clamp(0.625rem, 0.5157rem + 0.5381vw, 1rem);
+    --showcase_p: clamp(0.75rem, 0.4793rem + 0.7175vw, 1.125rem);
+    --p_fluid: clamp(0.75rem, 0.6771rem + 0.3587vw, 1rem);
+    --accordion-list: clamp(0.75rem, 0.5157rem + 0.5381vw, 1rem);
+    --tech-span-text: clamp(0.75rem, 0.6771rem + 0.3587vw, 1rem);
 }
 
 body {
@@ -14,7 +16,6 @@ body {
 .container {
     margin: auto;
     overflow: hidden;
-    border: 1px solid red;
 }
 
 header {
@@ -56,6 +57,8 @@ header nav {
     margin-top: 10px;
 }
 
+
+
 header .highlight,
 header .current a {
     color: #77b300;
@@ -76,12 +79,11 @@ header a:hover {
 
 #showcase h1 {
     margin-top: 100px;
-    font-size: 55px;
     margin-bottom: 10px;
 }
 
 #showcase p {
-    font-size: 20px;
+    font-size: var(--showcase_p);
 }
 
 
@@ -126,6 +128,16 @@ p {
     flex-direction: column;
 }
 
+@media (max-width: 576px) {
+    .skills .wrapper_according-container .according_container {
+        width: 75vw;
+    }
+
+    .skills .wrapper_according-container .according_container .accordion_header_heading strong {
+        margin-right: 2.8%;
+    }
+}
+
 .skills .wrapper_according-container .according_container .accordion-item .accordion-body li {
     font-size: var(--accordion-list);
 }
@@ -136,8 +148,20 @@ p {
     padding: 0 20px;
 }
 
+.projects-list {
+    margin-top: 20px;
+}
+
+
+
 .projects li {
-    margin-left: 30px;
+    margin: 0px;
+}
+
+@media (min-width: 768px) {
+    .projects .ul-features li {
+        margin-left: 30px;
+    }
 }
 
 .e-commrace .tech-stack .resume-api-backend-link,
@@ -159,12 +183,18 @@ p {
     color: inherit;
 }
 
+.resume-api-backend-li {
+    overflow: hidden;
+    /* Prevents content from spilling out */
+}
+
+
 
 /* Set a different font-style for <ul> inside <p> */
 .e-commrace .ul-features,
 .portfolio-li .ul-features,
 .resume-api-backend-li .ul-features,
-.image-slider-photoSwipe .image-slider-features,
+.image-slider-photoSwipe .ul-features,
 .table-hover-transition .ul-features,
 .fluid-typography-vs-breakpoints .ul-features,
 .typing-animations .ul-features,
@@ -180,13 +210,13 @@ p {
 .e-commrace .ul-features li,
 .portfolio-li .ul-features li,
 .resume-api-backend-li .ul-features li,
-.image-slider-photoSwipe .image-slider-features li,
+.image-slider-photoSwipe .ul-features li,
 .table-hover-transition .ul-features li,
 .fluid-typography-vs-breakpoints .ul-features li,
 .typing-animations .ul-features li,
 .parallax-animations .ul-features li {
     font-family: "Oswald", sans-serif;
-    font-size: 1rem;
+    font-size: var(--p_fluid);
 }
 
 .projects .tech-stack {
@@ -195,11 +225,11 @@ p {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    border: 1px solid red;
 }
 
 .projects.tech-stack span {
-    font-size: clamp(0.625rem, 0.4793rem + 0.7175vw, 1.125rem);
+    /* font-size: clamp(0.625rem, 0.4793rem + 0.7175vw, 1.125rem); */
+    font-size: clamp(0.75rem, 0.6771rem + 0.3587vw, 1rem);
 }
 
 
@@ -207,6 +237,34 @@ p {
 .custom-divider {
     margin: 30px 0 30px 100px;
     width: 75%;
+}
+
+
+.image-slider-photoSwipe h4 span,
+.table-hover-transition h4 span,
+.fluid-typography-vs-breakpoints h4 span,
+.typing-animations h4 span,
+.parallax-animations h4 span,
+.scroll-driven-animation h4 span {
+
+    width: 5%;
+    height: auto;
+    font-size: clamp(0.625rem, 0.5886rem + 0.1794vw, 0.7rem);
+    text-align: center;
+}
+
+/* Below Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+
+    .image-slider-photoSwipe h4 span,
+    .table-hover-transition h4 span,
+    .fluid-typography-vs-breakpoints h4 span,
+    .typing-animations h4 span,
+    .parallax-animations h4 span,
+    .scroll-driven-animation h4 span {
+        width: clamp(2rem, 3.7336rem + -3.6117vw, 3rem);
+        height: auto;
+    }
 }
 
 footer {
@@ -253,19 +311,7 @@ footer {
 }
 
 
-.flex-the-contact-section {
-    display: flex;
-    align-items: safe;
-    justify-content: space-evenly;
-}
-
-
-
-.profile-image {
-    flex: 0 0 auto;
-}
-
-.profile-image img {
+.profile-image-img {
     max-width: 150px;
     /* Adjust size as needed */
     border-radius: 50%;
