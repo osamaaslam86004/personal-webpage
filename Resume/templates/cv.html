@@ -57,13 +57,10 @@
 
 <!-- Custom Stylesheet -->
 {% compress css %}
-<link href="{% static 'Resume/css/cv.css' %}" rel="stylesheet" type="text/css">
+<!-- <link href="{% static 'Resume/css/cv.css' %}" rel="stylesheet" type="text/css"> -->
+<link rel="preload" href="{% static 'Resume/css/cv.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 {% endcompress %}
 
-<!-- JavaScript with Security & Performance -->
-{% compress js %}
-<script src="{% static 'Resume/js/cv.js' %}" defer referrerpolicy="strict-origin-when-cross-origin"></script>
-{% endcompress js %}
 
 <title>Osama Aslam - Python Web Developer</title>
 {% endblock %}
@@ -611,6 +608,11 @@
 <footer>
     <p>Osama Aslam &copy; 2024</p>
 </footer>
+
+<!-- JavaScript with Security & Performance -->
+{% compress js %}
+<script src="{% static 'Resume/js/cv.js' %}" defer referrerpolicy="strict-origin-when-cross-origin"></script>
+{% endcompress js %}
 
 <!-- Bootstrap script -->
 <script type="text/javascript" src="{% static 'Resume/js/bootstrap.bundle.min.js' %}"></script>
