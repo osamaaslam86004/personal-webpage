@@ -9,7 +9,6 @@ def render_resume(request):
     """Fastest function-based view for rendering the resume with caching & ETag."""
 
     response = render(request, "cv.html")  # Directly render template
-    response.render()  # Ensure content is fully available before hashing
 
     # Generate a strong ETag based on content hash
     content_hash = hashlib.md5(response.content).hexdigest()
