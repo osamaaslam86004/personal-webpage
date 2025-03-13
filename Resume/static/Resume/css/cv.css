@@ -13,7 +13,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
+.custom_container {
     margin: auto;
     overflow: hidden;
 }
@@ -44,11 +44,11 @@ header li {
     padding: 0 20px 0 20px;
 }
 
-header #branding {
-    float: left;
+header .custom_container .branding {
+    align-items: center;
 }
 
-header #branding h1 {
+header .custom_container.branding h1 {
     margin: 0;
 }
 
@@ -56,8 +56,6 @@ header nav {
     float: right;
     margin-top: 10px;
 }
-
-
 
 header .highlight,
 header .current a {
@@ -69,20 +67,50 @@ header a:hover {
     color: #ccc;
 }
 
-#showcase {
-    min-height: 400px;
-    background: url("../images/image.jpg") no-repeat 0 -400px;
+.showcase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
+    overflow: hidden;
+    max-height: 100vw;
+    margin-bottom: 2vh;
 }
 
+/* Ensure the text stays in the center */
+.showcase .title_heading {
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+}
 
-#showcase h1 {
+.showcase .background-image {
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Apply translateY for screens wider than 768px */
+@media (min-width: 768px) {
+    .showcase .title_heading {
+        transform: translateY(-10vh);
+        /* Adjust this value as needed */
+    }
+}
+
+.showcase h1 {
     margin-top: 100px;
     margin-bottom: 10px;
 }
 
-#showcase p {
+.showcase p {
     font-size: var(--showcase_p);
 }
 

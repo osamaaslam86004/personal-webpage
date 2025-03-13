@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
@@ -148,7 +148,6 @@ CSP_IMG_SRC = (
 
 CSP_STYLE_SRC = (
     "'self'",
-    "https://cdn.jsdelivr.net",
     "https://fonts.googleapis.com",
 )
 
@@ -160,10 +159,7 @@ CSP_FONT_SRC = (
 )
 
 
-CSP_SCRIPT_SRC = (
-    "'self'",
-    "https://cdn.jsdelivr.net",
-)
+CSP_SCRIPT_SRC = ("'self'",)
 # Enable CSP violation reporting
 CSP_REPORT_URI = "/csp-violation-report/"  # Django endpoint to handle reports
 # Modern reporting API (optional, but useful for analytics)
@@ -187,6 +183,10 @@ COMPRESS_DEBUG_TOGGLE = "compress"  # Allows debug mode toggle
 # Specify the backend to handle compression
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_URL = STATIC_URL
+# Point to the correct static files directory
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "Resume"),  # Ensure BASE_DIR is correctly set
+]
 
 # Compress CSS and JS files
 COMPRESS_CSS_FILTERS = [
