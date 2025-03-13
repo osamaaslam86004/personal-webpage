@@ -57,7 +57,7 @@
 <!-- Custom Stylesheet -->
 {% compress css %}
 <!-- <link href="{% static 'Resume/css/cv.css' %}" rel="stylesheet" type="text/css"> -->
-<link rel="preload" href="{% static 'Resume/css/cv.css' %}" as="style" id="cv-css" />
+<link href="{% static 'Resume/css/cv.css' %}" as="style" id="cv-css" />
 {% endcompress %}
 
 
@@ -610,14 +610,16 @@
 
 {% compress js %}
 <!-- JavaScript with Security & Performance -->
-<script src="{% static 'Resume/js/preload_styles.js' %}" referrerpolicy="strict-origin-when-cross-origin"></script>
+<script type="text/javascript" src="{% static 'Resume/js/preload_styles.js' %}"
+    referrerpolicy="strict-origin-when-cross-origin" defer></script>
 
 <!-- JavaScript with Security & Performance -->
-<script src="{% static 'Resume/js/cv.js' %}" defer referrerpolicy="strict-origin-when-cross-origin"></script>
+<script type="text/javascript" src="{% static 'Resume/js/cv.js' %}" defer
+    referrerpolicy="strict-origin-when-cross-origin"></script>
 {% endcompress js %}
 
 <!-- Bootstrap script -->
-<script type="text/javascript" src="{% static 'Resume/js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Resume/js/bootstrap.bundle.min.js' %}" defer></script>
 
 {% endblock %}
 

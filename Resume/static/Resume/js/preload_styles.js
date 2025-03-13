@@ -7,5 +7,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadCSS("bootstrap-css");
-    loadCSS("cv-css");
 });
