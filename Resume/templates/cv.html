@@ -608,26 +608,11 @@
     <p>Osama Aslam &copy; 2024</p>
 </footer>
 
-{% compress js inline %}
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-        function loadCSS(id) {
-            var link = document.getElementById(id);
-            if (link) {
-                link.rel = "stylesheet"; // Apply CSS after page is loaded
-            }
-        }
-
-        loadCSS("bootstrap-css");
-        loadCSS("cv-css");
-    });
-
-</script>
-{% endcompress %}
+{% compress js %}
+<!-- JavaScript with Security & Performance -->
+<script src="{% static 'Resume/js/preload_styles.js' %}" referrerpolicy="strict-origin-when-cross-origin"></script>
 
 <!-- JavaScript with Security & Performance -->
-{% compress js %}
 <script src="{% static 'Resume/js/cv.js' %}" defer referrerpolicy="strict-origin-when-cross-origin"></script>
 {% endcompress js %}
 
