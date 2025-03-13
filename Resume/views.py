@@ -1,16 +1,18 @@
 import hashlib
 
-from django.utils.decorators import method_decorator
+from django.shortcuts import render
 from django.views.decorators.cache import cache_control
-from django.views.generic import TemplateView
 
 
-@method_decorator(cache_control(public=True, max_age=604800), name="dispatch")
-class RenderResume(TemplateView):
-    template_name = "cv.html"
+@cache_control(public=True, max_age=604800)  # Cache for 7 days
+def custom_get(request):
+    """Fastest function-based view for rendering the resume with caching & ETag."""
 
-    def render_to_response(self, context, **response_kwargs):
-        response = super().render_to_response(context, **response_kwargs)
-        content_hash = hashlib.md5(response.content).hexdigest()  # Fast and reliable
-        response["ETag"] = f'W/"{content_hash}"'  # Weak ETag
-        return response
+    response = render(request, "cv.html")  # Directly render template
+    response.render()  # Ensure content is fully available before hashing
+
+    # Generate a strong ETag based on content hash
+    content_hash = hashlib.md5(response.content).hexdigest()
+    response["ETag"] = f'W/"{content_hash}"'
+
+    return response
