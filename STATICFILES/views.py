@@ -4,11 +4,18 @@ from datetime import datetime, timezone
 
 from django.conf import settings
 from django.shortcuts import render
+from django.views.decorators.cache import cache_control
 from django.views.decorators.http import condition
 
 # Path to the template file
-TEMPLATE_PATH = os.path.join(settings.BASE_DIR, "templates", "cv.html")
-print(TEMPLATE_PATH, settings.BASE_DIR)
+if settings.DEBUG:
+    # for Windows
+    TEMPLATE_PATH = os.path.join(settings.BASE_DIR, "templates", "Resume\\cv.html")
+else:
+    # for Linux
+    TEMPLATE_PATH = os.path.join(settings.BASE_DIR, "templates", "Resume/cv.html")
+
+print(f"{TEMPLATE_PATH, settings.BASE_DIR}")
 
 
 def etag_func(request, *args, **kwargs):
@@ -32,7 +39,8 @@ def last_modified_func(request, *args, **kwargs):
         return None
 
 
+@cache_control(public=True, max_age=604800)  # Cache for 7 days)
 @condition(etag_func=etag_func, last_modified_func=last_modified_func)
 def render_resume(request):
     """Render the resume page, detecting template changes."""
-    return render(request, "cv.html")
+    return render(request, "Resume/cv.html")

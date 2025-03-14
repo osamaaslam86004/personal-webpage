@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG == True:
     ALLOWED_HOSTS = ["*"]
@@ -176,9 +176,9 @@ STATICFILES_FINDERS = (
     "compressor.finders.CompressorFinder",
 )
 COMPRESS_ENABLED = True  # compress in Debug=True + Debug =Flase
-
 # Default to False in development unless DEBUG=False
 COMPRESS_OFFLINE = True  # Pre-compress files during `collectstatic`
+COMPRESS_VERBOSE = True  # Extra debugging output
 COMPRESS_DEBUG_TOGGLE = "compress"  # Allows debug mode toggle
 # Specify the backend to handle compression
 COMPRESS_ROOT = STATIC_ROOT
