@@ -175,7 +175,7 @@ STATICFILES_FINDERS = (
     # other finders..
     "compressor.finders.CompressorFinder",
 )
-COMPRESS_ENABLED = True  # compress in Debug=True + Debug =Flase
+COMPRESS_ENABLED = False  # compress in Debug=True + Debug =Flase
 
 # Default to False in development unless DEBUG=False
 COMPRESS_OFFLINE = True  # Pre-compress files during `collectstatic`

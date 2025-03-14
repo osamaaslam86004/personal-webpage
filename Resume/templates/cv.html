@@ -51,12 +51,11 @@
 <!-- Preload Bootstrap to prioritize loading -->
 <link rel="preload" href="{% static 'Resume/css/bootstrap.min.css' %}" as="style" id="bootstrap-css" />
 <noscript>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'Resume/css/bootstrap.min.css' %}" type="text/css" />
 </noscript>
 
 <!-- Custom Stylesheet -->
 {% compress css %}
-<!-- <link href=" {% static 'Resume/css/cv.css' %}" rel="stylesheet" type="text/css"> -->
 <link rel="stylesheet" href="{% static 'Resume/css/cv.css' %}" type="text/css" />
 {% endcompress %}
 
