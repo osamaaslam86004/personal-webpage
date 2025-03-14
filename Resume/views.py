@@ -7,8 +7,10 @@ from django.shortcuts import render
 from django.views.decorators.cache import cache_control
 from django.views.decorators.http import condition
 
+
 TEMPLATE_PATH = os.path.join(settings.BASE_DIR, "Resume", "templates", "cv.html")
 TEMPLATE_PATH = os.path.normpath(TEMPLATE_PATH)  # Normalize for the OS
+
 
 print(f"{TEMPLATE_PATH, settings.BASE_DIR}")
 
@@ -38,4 +40,5 @@ def last_modified_func(request, *args, **kwargs):
 @condition(etag_func=etag_func, last_modified_func=last_modified_func)
 def render_resume(request):
     """Render the resume page, detecting template changes."""
+
     return render(request, "cv.html")
