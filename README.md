@@ -72,11 +72,22 @@ To enhance **Google Search visibility** and enable **rich results**, I implement
 
 ---
 
+
+## Update: 1 
+
+### ✅ Added `srcset` for SEO and Performance
+- Implemented the `srcset` attribute for responsive images.
+- Improves SEO by providing better image resolution based on device capabilities.
+- Enhances website performance by loading the optimal image size.
+
+### ✅ Implemented Cache Header + ETag Header
+- Added `Cache-Control` headers to improve page load speed.
+- Implemented ETag headers by fetching the last modified time of the HTML file from the OS.
+- Ensures efficient caching and reduces unnecessary data transfers.
+
+
 ## 📩 Contact
 📧 Email: osama.aslam.86004@gmail.com  
 🔗 LinkedIn: [osamaaslam86004](https://www.linkedin.com/in/osama-aslam-86004/)  
 
 ---
-
-## 🏆 Next Steps
-- Add **structured data (`JSON-LD`)** for richer Google search results.
