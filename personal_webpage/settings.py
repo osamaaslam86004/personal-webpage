@@ -175,19 +175,21 @@ STATICFILES_FINDERS = (
     # other finders..
     "compressor.finders.CompressorFinder",
 )
-COMPRESS_ENABLED = False  # compress in Debug=True + Debug =Flase
+COMPRESS_ENABLED = True  # compress in Debug=True + Debug =Flase
 
 # Default to False in development unless DEBUG=False
-COMPRESS_OFFLINE = True  # Pre-compress files during `collectstatic`
+COMPRESS_OFFLINE = False  # Pre-compress files during `collectstatic`
 if DEBUG == True:
     COMPRESS_DEBUG_TOGGLE = "compress"  # Allows debug mode toggle
 # Specify the backend to handle compression
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_URL = STATIC_URL
 # Point to the correct static files directory
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Resume"),  # Ensure BASE_DIR is correctly set
-]
+
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "Resume"),  # Ensure BASE_DIR is correctly set
+    ]
 
 # Compress CSS and JS files
 COMPRESS_CSS_FILTERS = [
